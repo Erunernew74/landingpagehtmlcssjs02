@@ -1,0 +1,1449 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #e0dcdc
+}
+
+header nav li {
+    list-style: none;
+}
+
+header ul li a {
+    color: rgb(63, 63, 63);
+    text-decoration: none;
+}
+
+.navbar {
+    min-height: 15vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    font-family: 'Poppins', sans-serif;
+    padding: 0 50px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.nav-branding {
+    font-size: 2rem;
+}
+
+.nav-link {
+    transition: 0.7s ease;
+    text-transform: uppercase;
+}
+.nav-link:hover {
+    color: dodgerblue
+}
+
+.nav-branding {
+    color: white;
+    text-decoration: none;
+}
+
+.hamburgher {
+    display: none;/* mostra o meno il div. Se non lo mostra la lista andrà a prendere il suo posto */
+    cursor: pointer;
+}
+/* Questa è il customize dello span */
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: rgb(93, 93, 93);
+}
+
+
+@media (max-width: 1200px) {
+    .hamburgher{
+        display: block;/* A qusto punto faccio vedere il menu hamburgher */
+        z-index: 10000;
+    }
+    header ul li a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+    }
+
+    /* Creiamo una classe sul div hamburgher che verrà attivato tramite javascript
+    cioè modifichiamo l'hamburgher facendolo diventare una X */
+    .hamburgher.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburgher.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburgher.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Andiamo a cambiare la posizione del nostro menu */
+    .nav-menu {
+        position: fixed;/* Posizione fissa del menù per cui tutto a destra */
+        left: -100%; /* Lo metteremo a sinistra del 100% e al click dell'hamburgher lo faremo tornare in posizione normale */
+        top: 70px; /* Per cui lo abbasseremo dal top di 70 px */
+        flex-direction: column;
+        background-color: #262626;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 125px 0;
+        z-index: 10000000;
+    }
+
+    .nav-item {
+        margin: 0px 0;
+    }
+
+    /* Daremo la stessa classe, ma con funzionalità diverse, anche al menu 
+    al click sull'hamburgher menu*/
+    .nav-menu.active {
+        left: 0;/* Lo facciamo tornare indietro nella posizione originale */
+    }
+}
+
+
+
+/* hero section */
+.heroSection {
+        background-image: url('./images/raamin-ka-8J56bYMT3-Q-unsplash.jpg');
+        height: 85vh;
+        width: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: overlay;
+        background-color: rgb(70, 70, 70);
+        display: flex;
+        justify-content: flex-end;
+}
+.containerItems {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-transform: uppercase;
+        height: 85vh;
+        width: 40%;
+        background: rgba(255, 122, 89, .5);
+        /* opacity: 0.4; */
+        padding: 10px 35px;
+}
+.containerItems h1 {
+    font-size: 45px;
+    color: white;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+@media screen and (max-width: 368px) {
+    .nav-branding {
+        font-size: 15px;
+    }
+    .heroSection {
+        background-image: url('./images/rayul-_M6gy9oHgII-unsplash.jpg');
+        height: 85vh;
+        width: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: overlay;
+        background-color: rgb(70, 70, 70);
+        display: flex;
+        flex-direction: column;
+        text-transform: uppercase;
+    }
+    .containerItems {
+        height: 35vh;
+        width: 100%;
+        background: rgba(255, 122, 89, .5);
+        /* opacity: 0.4; */
+        padding: 10px 15px;
+    }
+    .containerItems h1 {
+        color: white;
+        font-weight: bold;
+        padding-bottom: 20px;
+        font-size: 20px;
+    }
+    .containerItems h4 {
+        font-size: 10px;
+    } 
+}
+
+
+
+@media screen and (min-width: 368px) and (max-width: 768px) {
+    .nav-branding {
+        font-size: 15px;
+    }
+    .heroSection {
+        background-image: url('./images/rayul-_M6gy9oHgII-unsplash.jpg');
+        height: 85vh;
+        width: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: overlay;
+        background-color: rgb(70, 70, 70);
+        display: flex;
+        flex-direction: column;
+        text-transform: uppercase;
+    }
+    .containerItems {
+        height: 35vh;
+        width: 100%;
+        background: rgba(255, 122, 89, .5);
+        /* opacity: 0.4; */
+        padding: 10px 15px;
+    }
+    .containerItems h1 {
+        color: white;
+        font-weight: bold;
+        color: rgba(234, 240, 246, 0.8);
+        padding-bottom: 20px;
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .nav-branding {
+        font-size: 15px;
+    }
+    .heroSection {
+        background-image: url('./images/rayul-_M6gy9oHgII-unsplash.jpg');
+        height: 85vh;
+        width: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: overlay;
+        background-color: rgb(70, 70, 70);
+        display: flex;
+        justify-content: flex-end;
+        
+        
+    }
+    .containerItems {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-transform: uppercase;
+        height: 85vh;
+        width: 40%;
+        background: rgba(255, 122, 89, .5);
+        /* opacity: 0.4; */
+        padding: 10px 15px;
+    }
+    .containerItems h1 {
+        color: white;
+        font-weight: bold;
+        padding-bottom: 20px;
+    }
+}
+
+
+/* SECTION ABITI DA CERIMONIA */
+.abitiCerimonia {
+    height: 70vh;
+    width: 100%;
+}
+.abitiCerimoniaItems {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 30px;
+}
+
+.abitiCerimoniaItems h1 {
+    font-size: 65px;
+}
+.abitiCerimoniaItems h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+.abitiCerimoniaItems h5 {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-style: italic;
+}
+
+@media screen and (max-width: 368px) {
+    .abitiCerimoniaItems {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+    .abitiCerimoniaItems h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+    .abitiCerimoniaItems h3 {
+        font-size: 15px;
+        text-align: center;
+        padding: 0 25px;
+    }
+    .abitiCerimoniaItems h5 {
+        font-size: 12px;
+        text-align: justify;
+        padding: 0 25px;
+    }
+}
+
+@media screen and (min-width: 368px) and (max-width: 768px) {
+    .abitiCerimoniaItems {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+    .abitiCerimoniaItems h1 {
+        font-size: 35px;
+        text-align: center;
+    }
+    .abitiCerimoniaItems h3 {
+        font-size: 15px;
+        text-align: center;
+        padding: 0 25px;
+    }
+    .abitiCerimoniaItems h5 {
+        font-size: 12px;
+        text-align: justify;
+        padding: 0 35px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .abitiCerimoniaItems h5 {
+        padding: 0 45px;
+        text-align: justify;
+    }
+}
+
+@media screen and (max-width: 1025px ) {
+    .abitiCerimoniaItems h5 {
+        padding: 0 45px;
+        text-align: justify;
+    }
+}
+
+
+
+/** ACCESSORI **/
+.accessoriContainer{
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 1px solid red; */
+    font-family: 'Montserrat';
+}
+.containerAccessorio {
+    height: 400px;
+    width: 33%;
+    /* border: 1px solid black; */
+    background-color: #BFA581;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 35px;
+    gap: 35px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.containerAccessorio h1 {
+    font-weight: bolder;
+    font-size: 28px;
+    text-align: center;
+}
+
+.containerAccessorio p {
+    text-align: justify;
+}
+
+.containerAccessorio button {
+    padding: 25px 45px;
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    transition: 0.4s;
+    font-family: 'roboto';
+}
+
+.containerAccessorio button:hover {
+    background-color: #8e8c8c;
+    color: rgb(255, 255, 255)
+}
+
+.containerAccessorio i {
+    font-size: 50PX;
+    color: #000000;
+}
+
+#accessoriCerimonie {
+    background-color: #DCC9B8;
+}
+
+#cerimonieUomo {
+    background-color: #B8B8B8;
+}
+
+@media screen and (max-width: 368px) {
+   .accessoriContainer {
+       height: auto;
+       flex-direction: column;
+   }
+   .containerAccessorio {
+       width: 95%;
+       margin: 10px 0;
+   }
+    .containerAccessorio h1 {
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .containerAccessorio button {
+        padding: 12px 25px;
+    }   
+}
+
+@media screen and (min-width: 368px) and (max-width: 768px) {
+    .accessoriContainer {
+       height: auto;
+       flex-direction: column;
+   }
+   .containerAccessorio {
+       width: 95%;
+       margin: 10px 0;
+   }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    .accessoriContainer {
+        height: auto;
+        flex-direction: column;
+    }
+    .containerAccessorio {
+        width: 95%;
+        margin: 10px 0;
+    }
+    
+}
+
+/** ABITI ELEGANTI **/
+.abitiEleganti {
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerItemsAbitiEleganti {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+    height: 50vh;
+    font-family: 'Montserrat';
+}
+.containerItemsAbitiEleganti h1 {
+    font-size: 55px;
+    font-weight: bolder;
+}
+
+.containerItemsAbitiEleganti p {
+    margin: 60px 0;
+}
+
+
+.divisorio {
+    text-align: center;
+    width: 40px;
+}
+
+@media screen and (max-width: 368px) {
+    .abitiEleganti  {
+        height: 50vh;
+        width: 100%;
+    }
+    .containerItemsAbitiEleganti  {
+        /* border: 1px solid black; */
+        padding: 0 35px;
+    }
+    .containerItemsAbitiEleganti h1 {
+        font-size: 20px;
+    }
+    
+    .containerItemsAbitiEleganti p {
+    margin: 30px 0;
+    }
+}
+
+@media screen and (min-width: 368px) and (max-width: 768px) {
+    .abitiEleganti {
+        height: 70vh;
+    }
+    .containerItemsAbitiEleganti  {
+        /* border: 1px solid black; */
+        padding: 0 35px;
+        height: 100%;
+        width: 95%;
+    }
+    .containerItemsAbitiEleganti h1 {
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    .abitiEleganti {
+        height: 75vh;
+    }
+    .containerItemsAbitiEleganti h1 {
+        font-size: 40px;
+    }
+    .containerItemsAbitiEleganti  {
+        /* border: 1px solid black; */
+        padding: 0 35px;
+        height: 100%;
+        width: 95%;
+    }
+}
+
+/** section iconeitems **/
+.iconeItemsContainer {
+    height: 100vh;
+    width: 100%;
+    /* border: 1px solid black; */
+    background-color: #d5d4d4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-wrap: wrap; */
+}
+.containerGenerale {
+    display: flex;
+    width: 100%;
+    height: 85%;
+    /* border: 3px solid greenyellow; */
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 40px;
+    margin: 0 90px;
+}
+.containerItemsIcone {
+    /* border: 1px solid red; */
+    height: 250px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+    padding: 50px 40px;
+}
+
+.containerItemsIcone h3 {
+    margin-bottom: 20px;
+    color: #BFA581;
+}
+.containerItemsIcone i {
+    margin-right: 25px;
+    font-size: 35px;
+    color: #BFA581;
+}
+
+.containerItemsIcone p {
+    font-family: 'Raleway';
+}
+
+@media screen and (max-width: 368px) {
+    .iconeItemsContainer {
+        height: 240vh;
+        width: 100%;
+        /* border: 1px solid black; */
+
+        flex-direction: column;
+     }
+     .containerGenerale {
+
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        /* border: 3px solid greenyellow; */
+ 
+        flex-wrap:nowrap;
+        padding: 0 20px;
+        margin: 0 0px;
+    }
+
+    .containerItemsIcone {
+        /* border: 1px solid red; */
+        height: 380px;
+        width: 100%;
+        flex-direction: column;
+        margin:  0;
+        padding: 0 25px;
+    }
+    .containerItemsIcone  p {
+        text-align: justify;
+        font-size: 13px;
+    }
+    .containerItemsIcone  i {
+        margin-bottom: 25px;
+    }
+}
+
+@media screen and (min-width: 368px) and (max-width: 588px) {
+    .iconeItemsContainer {
+        height: 240vh;
+        width: 100%;
+        /* border: 1px solid black; */
+
+        flex-direction: column;
+     }
+     .containerGenerale {
+
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        /* border: 3px solid greenyellow; */
+ 
+        flex-wrap:nowrap;
+        padding: 0 20px;
+        margin: 0 0px;
+    }
+
+    .containerItemsIcone {
+        /* border: 1px solid red; */
+        height: 380px;
+        width: 100%;
+        flex-direction: column;
+        margin:  0;
+        padding: 0 25px;
+    }
+    .containerItemsIcone  p {
+        text-align: justify;
+    }
+    .containerItemsIcone  i {
+        margin-bottom: 25px;
+    }
+}
+@media screen and (min-width: 588px) and (max-width: 1124px) {
+    .iconeItemsContainer {
+        height: 200vh;
+        width: 100%;
+        /* border: 1px solid black; */
+
+        flex-direction: column;
+     }
+     .containerGenerale {
+
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        /* border: 3px solid greenyellow; */
+ 
+        flex-wrap:nowrap;
+        padding: 0 20px;
+        margin: 0 0px;
+    }
+
+    .containerItemsIcone {
+        /* border: 1px solid red; */
+        height: 250px;
+        width: 100%;
+        flex-direction: column;
+        margin:  0;
+        padding: 0 25px;
+    }
+    .containerItemsIcone  p {
+        text-align: justify;
+    }
+    .containerItemsIcone  i {
+        margin-bottom: 25px;
+    }
+}
+
+@media screen and (min-width: 1124px) and (max-width: 1299px) {
+    .iconeItemsContainer {
+        height: 120vh;
+        width: 100%;
+   
+     }
+}
+
+
+/** APPUNTAMENTO SECTION **/
+
+.appuntamentoContainer {
+    height: 100vh;
+    width: 100%;
+    background-image: url('/images/joeyy-lee-s8SJ8pmxPDA-unsplash.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-color: rgb(55, 55, 55);
+    font-family: 'Montserrat';
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 84%);
+}
+
+.containerItemsAppuntamento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    color: white;
+    gap: 45px;
+}
+.containerItemsAppuntamento h1 {
+    font-size: 45px;
+}
+.containerItemsAppuntamento hr {
+    width: 45px;
+}
+.containerItemsAppuntamento button {
+    padding: 15px 65px;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.containerItemsAppuntamento button:hover {
+    background-color: #8e8c8c;
+    color: white
+}
+
+@media screen and (max-width: 368px) {
+    .containerItemsAppuntamento h1 {
+    font-size: 20px;
+    }
+
+    .containerItemsAppuntamento p {
+    font-size: 13px;
+    }
+}
+@media screen and (min-width: 368px) and (max-width: 768px) {
+    .containerItemsAppuntamento h1 {
+    font-size: 25px;
+    }
+
+    .containerItemsAppuntamento p {
+    font-size: 13px;
+    }
+}
+
+
+/** COLLEZIONI TITLE **/
+.collezioniTitle {
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    font-family: 'Montserrat';
+}
+
+.collezioniTitle h1 {
+    font-size: 45px;
+}
+.collezioniTitle hr {
+    width: 45px;
+}
+
+@media screen and (max-width: 368px) {
+    .collezioniTitle {
+        text-align: center;
+        padding: 0 25px;
+    }
+
+   .collezioniTitle h1 {
+    font-size: 25px;
+} 
+}
+ 
+
+
+/** FOTO COLLEZIONI SECTION **/
+.fotoCollezioni {
+    height: 100vh;
+    width: 100%;
+    /* background-color: #B8B8B8; */
+    /* margin: auto; */
+
+}
+
+.containerFoto {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* margin: auto; */
+    height: 100%;
+
+}
+
+#fotoCollezione1 {
+    height: 85vh;
+    width: 25%;
+    /* border: 1px solid red; */
+    background-image: url('/images/wedding.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-color: rgb(76, 76, 76);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    transition: 0.4s;
+}
+#fotoCollezione1 h1 {
+    margin-bottom: 45px;
+}
+#fotoCollezione1:hover {
+    transform: translateY(-20px);
+}
+#fotoCollezione2 {
+    height: 85vh;
+    width: 25%;
+    /* border: 1px solid red; */
+    background-image: url('/images/cerimonia\ uomo.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-color: rgb(76, 76, 76);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    transition: 0.4s;
+}
+#fotoCollezione2 h1 {
+    margin-bottom: 45px;
+}
+#fotoCollezione2:hover {
+    transform: translateY(-20px);
+}
+
+#fotoCollezione3 {
+    height: 85vh;
+    width: 25%;
+    /* border: 1px solid red; */
+    background-image: url('/images/damigelle.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-color: rgb(76, 76, 76);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    transition: 0.4s;
+}
+
+#fotoCollezione3 h1 {
+    margin-bottom: 45px;
+}
+#fotoCollezione3:hover {
+    transform: translateY(-20px);
+}
+
+#fotoCollezione4 {
+    height: 85vh;
+    width: 25%;
+    /* border: 1px solid red; */
+    background-image: url('/images/damigelle\ 2.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-color: rgb(76, 76, 76);    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    transition: 0.4s;
+}
+#fotoCollezione4 h1 {
+    margin-bottom: 45px;
+}
+#fotoCollezione4:hover {
+    transform: translateY(-20px);
+}
+
+
+#fotoCollezione5 {
+    height: 85vh;
+    width: 25%;
+    /* border: 1px solid red; */
+    background-image: url('/images/taglie\ comodi.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-color: rgb(76, 76, 76);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    transition: 0.4s;
+}
+
+#fotoCollezione5 h1 {
+    margin-bottom: 45px;
+}
+#fotoCollezione5:hover {
+    transform: translateY(-20px);
+}
+
+#fotoCollezione6 {
+    height: 85vh;
+    width: 25%;
+    /* border: 1px solid red; */
+    background-image: url('/images/abito-verde-stretto-brillantini-cerimonia-donna-galatina-charme-canaris-lecce-2.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-color: rgb(76, 76, 76);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    transition: 0.4s;
+}
+#fotoCollezione6 h1 {
+    margin-bottom: 45px;
+}
+#fotoCollezione6:hover {
+    transform: translateY(-20px);
+}
+
+
+@media screen and (max-width: 368px) {
+    .fotoCollezioni {
+        height: 300vh;
+        width: 100%;
+        background-color: #B8B8B8;
+        margin: auto;
+    
+    }
+    .containerFoto {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        width: 85%;
+        gap: 25px;
+
+    }
+    #fotoCollezione1, #fotoCollezione2, #fotoCollezione3, #fotoCollezione4, #fotoCollezione5, #fotoCollezione6  {
+        width: 100%;
+
+    }
+}
+@media screen and (min-width: 368px) and (max-width: 998px) {
+    .fotoCollezioni {
+        height: 300vh;
+        width: 100%;
+        background-color: #B8B8B8;
+        margin: auto;
+    
+    }
+    .containerFoto {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        width: 85%;
+        gap: 25px;
+
+    }
+    #fotoCollezione1, #fotoCollezione2, #fotoCollezione3, #fotoCollezione4, #fotoCollezione5, #fotoCollezione6  {
+        width: 100%;
+
+    }
+    
+}
+
+/** ACCESSORI BANNER **/
+.accessori {
+    height: 45vh;
+    width: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bannerAccessori {
+    height: 35vh;
+    width: 80%;
+    background-image: url('/images/accessori2.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+}
+
+/** SECTION BLOG **/
+.blog{
+    height: 55vh;
+    width: 100%;
+    background-color: #DCC9B8;
+    clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
+    
+}
+
+.blogItems {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 135px;
+    height: 50vh;
+    gap: 35px;
+    width: 100%;
+    font-family: 'Montserrat';
+    color: white;
+    text-align: center;
+}
+
+.blogItems h1 {
+    font-size: 45px;
+}
+.blogItems hr {
+    width: 45px;
+    /* background-color: #514949; */
+    margin-bottom: 30px;
+}
+
+/** SECTION CARD BLOG **/
+.blogCardsContainer {
+    height: 90vh;
+    width: 100%;
+    /* border: 1px solid greenyellow; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #DCC9B8;
+    clip-path: polygon(0 0, 100% 0, 100% 83%, 0% 100%);
+
+}
+.containerCards {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50vh;
+    width: 100%;
+
+    
+    /* border: 1px solid white; */
+}
+.cards_container {
+    height: 50vh;
+    width: 300px;
+    /* border: 1px solid red; */
+    background-color: white;
+}
+#card1 {
+    height: 185px;
+    width: 100%;
+    border: 50%;
+    object-fit: cover;
+}
+#card2 {
+    height: 185px;
+    width: 100%;
+    border: 50%;
+    object-fit: cover;
+}
+#card3 {
+    height: 185px;
+    width: 100%;
+    border: 50%;
+    object-fit: cover;
+}
+
+.containerBtn button {
+    padding: 15px 45px;
+    border: none;
+    margin-top: 75px;
+    cursor: pointer;
+    background-color: white;
+    font-family: 'Montserrat';
+    transition: 0.4s;
+}
+.containerBtn button:hover {
+    background-color: #8e8c8c;
+    color: white;
+}
+.cardTitoloArticolo {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    height: 25vh;
+    width: 100%;
+    gap: 20px;
+}
+
+
+@media screen and (max-width: 368px) {
+    .blog {
+        height: 65vh;
+        padding-top: 55px;
+        clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
+        /* border: 1px solid black; */
+    }
+    .blogItems h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+    .containerCards {
+        flex-direction: column;
+        height: 220vh;
+    }
+    .blogCardsContainer {
+        clip-path: none;
+        height: 250vh;
+        justify-content: center;
+        /* clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%); */
+        /* align-items: center; */
+    }
+    .cards_container {
+        margin: 15px 0;
+        width: 85%;
+        height: 70vh;
+    }
+
+}
+@media screen and (min-width: 368px) and (max-width: 998px) {
+    .blog {
+        height: 65vh;
+        padding-top: 55px;
+        clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
+        /* border: 1px solid black; */
+    }
+    .containerCards {
+        flex-direction: column;
+        height: 220vh;
+    }
+    .blogCardsContainer {
+        clip-path: none;
+        height: 250vh;
+        justify-content: center;
+        /* clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%); */
+        /* align-items: center; */
+    }
+    .cards_container {
+        margin: 15px 0;
+        width: 85%;
+        height: 70vh;
+    }
+
+}
+
+/** SECTION ABITO DEI SOGNI **/
+.abitoDeiSogni{
+    height: 100vh;
+    width: 100%;
+    background-image: url('/images/abitocerminoia.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    font-family: 'Montserrat';
+}
+.abitoDeiSogni button {
+    padding: 15px 45px;
+    cursor: pointer;
+    color:rgb(4, 4, 4);
+    border: none;
+    transition: 0.4s;
+}
+.abitoDeiSogni button:hover {
+    color:#ffffff;
+    background-color: #8e8c8c;
+
+}
+
+@media screen and (max-width: 368px) {
+    .abitoDeiSogni h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 368px) and (max-width: 768px) {
+    .abitoDeiSogni h1 {
+        text-align: center;
+    }
+}
+
+/** FOOTER **/
+.footer {
+    height: 70vh;
+    width: 100%;
+    background-color: #B8B8B8;
+    font-family: 'Montserrat';
+    display: flex;
+    justify-content: space-around;
+}
+
+.containerItemsFooter span {
+    font-weight: bolder;
+}
+
+#containerItemsFooter1 {
+    display: flex;
+    flex-direction: column;
+    padding: 35px 45px;
+    height: 100%;
+    width: 400px;
+    /* border: 1px solid white; */
+    gap: 25px;
+    color: white;
+}
+
+#containerItemsFooter1 p {
+    font-size: 12px;
+}
+
+#containerItemsFooter2 {
+    padding: 45px 45px;
+    /* border: 1px solid white; */
+    width: 300px;
+    
+}
+#containerItemsFooter2 h4 {
+    margin-bottom: 25px;
+    color: #F2F3F8;
+}
+#containerItemsFooter2 p {
+    margin-bottom: 15px;
+    transition: 0.4s;
+    font-size: 13px;
+}
+
+#containerItemsFooter2 p:hover {
+    transform: translateX(15px);
+    cursor: pointer;
+}
+
+#containerItemsFooter3 {
+    padding: 45px 45px;
+    /* border: 1px solid white; */
+    width: 300px;
+}
+#containerItemsFooter3 h4 {
+    margin-bottom: 25px;
+    color: #F2F3F8;
+}
+#containerItemsFooter3 p {
+    margin-bottom: 15px;
+    transition: 0.4s;
+    font-size: 13px;
+}
+
+#containerItemsFooter3 p:hover {
+    transform: translateX(15px);
+    cursor: pointer;
+}
+
+#containerItemsFooter4 {
+    padding: 45px 45px;
+    /* border: 1px solid white; */
+    width: 400px;
+    color: #3c3b39;
+}
+
+#containerItemsFooter4 i {
+    margin-bottom: 65px;
+    margin-top: 20px;
+    font-size: 25px;
+    color: #b48935;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#containerItemsFooter4 i:hover {
+    color: white;
+}
+
+#containerItemsFooter4 h4 {
+    margin-bottom: 25px;
+    color: white;
+}
+
+@media screen and (max-width: 368px) {
+    .footer {
+        height: 500vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #containerItemsFooter1 {
+        text-align: center;
+        padding: 35px 15px;
+        height: 20%;
+        width: 80%;
+        /* border: 1px solid white; */
+        gap: 25px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #containerItemsFooter1 h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #containerItemsFooter2 {
+        text-align: center;
+        padding: 35px 45px;
+        height: 30%;
+        width: 80%;
+        /* border: 1px solid white; */
+        gap: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #containerItemsFooter3 {
+        text-align: center;
+        padding: 35px 45px;
+        height: 30%;
+        width: 80%;
+        /* border: 1px solid white; */
+        gap: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #containerItemsFooter4 {
+        text-align: center;
+        padding: 155px 15px;
+        height: 60%;
+        width: 80%;
+        /* border: 1px solid white; */
+        gap: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 368px) and (max-width: 1198px) {
+    .footer {
+        height: 400vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #containerItemsFooter1 {
+        text-align: center;
+        padding: 35px 15px;
+        height: 40%;
+        width: 80%;
+        /* border: 1px solid white; */
+        gap: 25px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #containerItemsFooter1 h1 {
+        font-size: 20px;
+        text-align: center;
+        margin-top: 145px;
+    }
+
+    #containerItemsFooter2 {
+        text-align: center;
+        padding: 35px 45px;
+        height: 30%;
+        width: 80%;
+        /* border: 1px solid white; */
+        gap: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #containerItemsFooter3 {
+        text-align: center;
+        padding: 35px 45px;
+        height: 30%;
+        width: 80%;
+        /* border: 1px solid white; */
+        gap: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #containerItemsFooter4 {
+        text-align: center;
+        padding: 155px 15px;
+        height: 100%;
+        width: 80%;
+        /* border: 1px solid white; */
+        gap: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
